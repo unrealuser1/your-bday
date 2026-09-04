@@ -1059,6 +1059,11 @@
       secret.classList.add("open");
       finalButton.style.display = "none";
 
+      // Let the reveal expand, then bring it fully into view
+      setTimeout(() => {
+        secret.scrollIntoView({ behavior: "smooth", block: "end" });
+      }, 400);
+
       // Magical subtle burst
       const container = document.getElementById("particles");
 
