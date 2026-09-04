@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#090a12" />
+  <title>For Tejal, on her 25th Birthday ❤️</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      --bg: #080912;
+      --bg-soft: #10111c;
+      --text: #f7f1ed;
+      --muted: #a9a6b0;
+      --gold: #e6c59a;
+      --gold-bright: #ffe1b3;
+      --rose: #d99a9d;
+      --rose-soft: #f3c8c6;
+      --line: rgba(255,255,255,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100%;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(108,91,143,.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body::-webkit-scrollbar { width: 7px; }
+    body::-webkit-scrollbar-thumb {
+      background: rgba(230,197,154,.35);
+      border-radius: 20px;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: white;
+      opacity: .4;
+      animation: twinkle var(--duration) ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: .15; transform: scale(.7); }
+      to { opacity: .85; transform: scale(1.5); }
+    }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      z-index: 100;
+      background: linear-gradient(90deg, var(--rose), var(--gold-bright));
+      box-shadow: 0 0 18px rgba(255,210,165,.7);
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px 22px;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: min(90vw, 650px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(222,164,174,.15) 0%, rgba(185,154,220,.06) 38%, transparent 68%);
+      filter: blur(10px);
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      50% { transform: scale(1.12); opacity: .75; }
+    }
+
+    .hero-content {
+      max-width: 700px;
+      position: relative;
+      animation: rise 1.5s cubic-bezier(.22,.61,.36,1) both;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .7rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(4.5rem, 17vw, 9rem);
+      line-height: .78;
+      letter-spacing: -.04em;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--rose-soft);
+      font-style: italic;
+      font-size: .47em;
+      letter-spacing: 0;
+      margin-top: 24px;
+    }
+
+    .hero-sub {
+      margin: 36px auto 0;
+      max-width: 390px;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+    }
+
+    .begin {
+      appearance: none;
+      border: 1px solid rgba(230,197,154,.55);
+      background: rgba(255,255,255,.03);
+      color: var(--gold-bright);
+      padding: 15px 27px;
+      border-radius: 999px;
+      margin-top: 36px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: .4s ease;
+    }
+
+    .begin:hover {
+      transform: translateY(-3px);
+      background: rgba(230,197,154,.12);
+      box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      animation: float 2.4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(7px); }
+    }
+
+    .story {
+      width: min(100%, 900px);
+      margin: auto;
+      padding: 15vh 24px;
+    }
+
+    .moment {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .moment-inner {
+      width: 100%;
+    }
+
+    .chapter {
+      color: var(--gold);
+      font-size: .7rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 12vw, 6.5rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.035em;
+      max-width: 800px;
+    }
+
+    .big-date {
+      color: var(--rose-soft);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .copy {
+      max-width: 580px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      line-height: 1.9;
+    }
+
+    .copy strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .quote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      font-style: italic;
+      max-width: 720px;
+      color: var(--text);
+    }
+
+    .quote em {
+      color: var(--rose-soft);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition:
+        opacity 1.2s cubic-bezier(.22,.61,.36,1),
+        transform 1.2s cubic-bezier(.22,.61,.36,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .distance {
+      min-height: 110vh;
+      padding: 13vh 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .distance-inner {
+      width: min(100%, 850px);
+      margin: auto;
+    }
+
+    .cities {
+      margin-top: 65px;
+      position: relative;
+      min-height: 260px;
+    }
+
+    .city {
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 9vw, 4rem);
+      color: rgba(255,255,255,.85);
+    }
+
+    .city.left { left: 0; top: 10px; }
+    .city.right { right: 0; bottom: 10px; text-align: right; }
+
+    .connection {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--rose), var(--gold), transparent);
+      transform: rotate(-14deg);
+      transform-origin: center;
+      opacity: .75;
+    }
+
+    .traveller {
+      width: 9px;
+      height: 9px;
+      position: absolute;
+      top: calc(50% - 4px);
+      border-radius: 50%;
+      background: var(--gold-bright);
+      box-shadow: 0 0 22px 6px rgba(255,220,174,.45);
+      animation: travel 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes travel {
+      from { left: 12%; }
+      to { left: 85%; }
+    }
+
+    .small-note {
+      color: var(--muted);
+      margin-top: 28px;
+      line-height: 1.8;
+      max-width: 530px;
+    }
+
+    .love-section {
+      min-height: 130vh;
+      padding: 18vh 24px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(185,112,125,.12), transparent 42%);
+    }
+
+    .love-inner {
+      width: min(100%, 800px);
+      margin: auto;
+    }
+
+    .lines {
+      margin-top: 48px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .line {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.7rem, 6vw, 3rem);
+      color: rgba(255,255,255,.38);
+      transition: color .5s ease, transform .5s ease;
+    }
+
+    .line:hover {
+      color: var(--text);
+      transform: translateX(8px);
+    }
+
+    .apology {
+      min-height: 125vh;
+      padding: 18vh 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .apology-inner {
+      width: min(100%, 750px);
+      margin: auto;
+    }
+
+    .apology-letter {
+      margin-top: 42px;
+      border-left: 1px solid rgba(230,197,154,.45);
+      padding-left: 24px;
+    }
+
+    .apology-letter p {
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.12rem);
+      line-height: 2;
+      margin-bottom: 23px;
+    }
+
+    .apology-letter p:last-child {
+      color: var(--rose-soft);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.15;
+      font-style: italic;
+    }
+
+    .turning {
+      min-height: 110vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20vh 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 80%, rgba(232,179,115,.14), transparent 38%),
+        linear-gradient(to bottom, var(--bg), #17131a 75%, #271d1b);
+    }
+
+    .turning h2 {
+      margin: auto;
+    }
+
+    .turning .copy {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .journey {
+      min-height: 100vh;
+      padding: 15vh 24px;
+      background:
+        linear-gradient(to bottom, #271d1b, #8a6654 75%, #d6a986);
+      color: #261c1a;
+    }
+
+    .journey-inner {
+      width: min(100%, 900px);
+      margin: auto;
+    }
+
+    .journey .chapter {
+      color: rgba(38,28,26,.65);
+    }
+
+    .journey h2 {
+      color: #241b19;
+    }
+
+    .journey .copy {
+      color: rgba(38,28,26,.72);
+    }
+
+    .route {
+      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .place {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 8vw, 4rem);
+      opacity: 0;
+      transform: translateX(-35px);
+      transition: 1s ease;
+    }
+
+    .place.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .place .dot {
+      flex: 0 0 11px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+    }
+
+    .route-line {
+      width: 1px;
+      height: 32px;
+      background: rgba(38,28,26,.4);
+      margin-left: 5px;
+    }
+
+    .home {
+      min-height: 110svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 60%, rgba(255,218,172,.22), transparent 36%),
+        linear-gradient(to bottom, #d6a986, #f0c7a9 55%, #e8b9a6);
+      color: #312321;
+      overflow: hidden;
+    }
+
+    .home-inner {
+      max-width: 850px;
+    }
+
+    .home h2 {
+      margin: auto;
+      font-size: clamp(4rem, 16vw, 8rem);
+    }
+
+    .home p {
+      max-width: 580px;
+      margin: 30px auto 0;
+      color: rgba(49,35,33,.72);
+      line-height: 1.9;
+    }
+
+    .birthday {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(221,142,153,.20), transparent 30%),
+        #17111a;
+    }
+
+    .birthday-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .birthday .age {
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(7rem, 28vw, 15rem);
+      line-height: .65;
+      opacity: .8;
+    }
+
+    .birthday h2 {
+      margin: 30px auto 0;
+      font-size: clamp(3.5rem, 13vw, 7rem);
+    }
+
+    .final-letter {
+      margin: 35px auto 0;
+      max-width: 650px;
+      color: #c7c0c3;
+      line-height: 2;
+      font-size: clamp(1rem, 3vw, 1.12rem);
+    }
+
+    .final-letter .special {
+      display: block;
+      color: var(--rose-soft);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 7vw, 3.7rem);
+      line-height: 1.15;
+      font-style: italic;
+      margin: 34px 0;
+    }
+
+    .final-button {
+      border: 1px solid rgba(243,200,198,.5);
+      background: transparent;
+      color: var(--rose-soft);
+      border-radius: 999px;
+      padding: 16px 28px;
+      margin-top: 42px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: .4s ease;
+    }
+
+    .final-button:hover {
+      background: rgba(243,200,198,.1);
+      transform: translateY(-3px);
+    }
+
+    .secret {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 1.5s ease, opacity 1s ease, margin-top 1s ease;
+    }
+
+    .secret.open {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 42px;
+    }
+
+    .secret p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      font-style: italic;
+      color: var(--gold-bright);
+    }
+
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--rose-soft);
+      opacity: 0;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 700px) {
+      .story { padding-left: 60px; padding-right: 60px; }
+      .moment { min-height: 70vh; }
+      .distance { padding-left: 60px; padding-right: 60px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal, .place {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="progress" id="progress"></div>
+  <div class="stars" id="stars"></div>
+
+  <!-- OPENING -->
+  <section class="hero" id="top">
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <p class="eyebrow">A little journey, made only for you</p>
+
+      <h1>
+        Hey,
+        <span>Sweetie.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Before this day becomes just another birthday with wishes and messages...
+        I wanted to stop time for a few minutes.
+        And remind you of something.
+      </p>
+
+      <button class="begin" onclick="document.getElementById('begin-story').scrollIntoView({behavior:'smooth'})">
+        Start our little journey ↓
+      </button>
+    </div>
+
+    <div class="scroll-hint">Made with love, for Tejal</div>
+  </section>
+
+
+  <!-- BEGINNING -->
+  <main id="begin-story" class="story">
+
+    <section class="moment">
+      <div class="moment-inner reveal">
+        <p class="chapter">Chapter I · Before I knew</p>
+        <div class="big-date">13 April 2019</div>
+
+        <h2>
+          Somewhere between school days and growing up...
+          <em style="color:var(--rose-soft)">you became my person.</em>
+        </h2>
+
+        <p class="copy">
+          I first knew you from our classes in 11th standard.
+          Back then, I had absolutely no idea that the girl I saw would become
+          someone whose presence would quietly shape so much of my life.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="moment">
+      <div class="moment-inner reveal">
+        <p class="chapter">And then, somehow...</p>
+
+        <p class="quote">
+          Seven years later,
+          <br />
+          <em>it's still you.</em>
+        </p>
+
+        <p class="copy">
+          Not because it was always easy.
+          But because through everything...
+          <strong>we kept finding our way back to us.</strong>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- DISTANCE -->
+  <section class="distance">
+    <div class="distance-inner reveal">
+      <p class="chapter">Chapter II · The distance</p>
+
+      <h2>
+        Sometimes love had
+        <span style="color:var(--rose-soft);font-style:italic;">two different cities.</span>
+      </h2>
+
+      <div class="cities">
+        <div class="city left">Mumbai</div>
+        <div class="connection"></div>
+        <div class="traveller"></div>
+        <div class="city right">Bengaluru</div>
+      </div>
+
+      <p class="small-note">
+        Two cities, two lives — and one relationship that refused to disappear.
+        All we wanted was the simplest thing:
+        <strong>to just be together.</strong>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- HER -->
+  <section class="love-section">
+    <div class="love-inner">
+      <div class="reveal">
+        <p class="chapter">Chapter III · What you gave me</p>
+
+        <h2>
+          You stayed
+          <span style="color:var(--gold);font-style:italic;">when leaving</span>
+          would have been easier.
+        </h2>
+      </div>
+
+      <div class="lines reveal">
+        <div class="line">You were loyal.</div>
+        <div class="line">You cared for me when I was sick.</div>
+        <div class="line">You gave me your attention.</div>
+        <div class="line">You took big risks for us.</div>
+        <div class="line">You protected what we had.</div>
+        <div class="line" style="color:var(--rose-soft);">
+          And you didn't abandon me...
+          even when I wasn't giving you the version of me you deserved.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CARE -->
+  <section class="story">
+    <section class="moment">
+      <div class="moment-inner reveal">
+        <p class="chapter">Something I finally understand</p>
+
+        <p class="quote">
+          You weren't trying to
+          <em>change me.</em>
+          <br />
+          You were trying to keep me.
+        </p>
+
+        <p class="copy">
+          Every time you pushed me to be healthier, build better habits,
+          and take care of myself the way you always have.
+        </p>
+      </div>
+    </section>
+  </section>
+
+
+  <!-- APOLOGY -->
+  <section class="apology">
+    <div class="apology-inner reveal">
+      <p class="chapter">Chapter IV · What I owe you</p>
+
+      <h2>
+        I'm sorry,
+        <span style="color:var(--rose-soft);font-style:italic;">Babe.</span>
+      </h2>
+
+      <div class="apology-letter">
+        <p>
+          I'm sorry for the times I didn't listen,
+          and for neglecting what you wished for me —
+          a healthier, more disciplined man who respected himself.
+        </p>
+
+        <p>
+          Too often, I showed up careless...
+          as if the person who loved me most was asking too much.
+        </p>
+
+        <p>
+          I understand it differently now.
+        </p>
+
+        <p>
+          Maybe you loved the future version of me
+          before I was mature enough to become him.
+          <br /><br />
+          And Babe...
+          <strong>I'm listening now.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TRANSFORMATION -->
+  <section class="turning">
+    <div class="reveal">
+      <p class="chapter">Chapter V · And now</p>
+
+      <h2>
+        I want you to see me
+        <span style="color:var(--gold);font-style:italic;">becoming.</span>
+      </h2>
+
+      <p class="copy">
+        Not becoming someone fake.
+        Not becoming someone you have to ask me to be.
+        But becoming the healthiest, strongest, gentlest and most disciplined
+        version of myself.
+      </p>
+
+      <p class="copy">
+        Because I finally understand something:
+        taking care of myself is also one way of
+        <strong>taking care of our future.</strong>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- DREAM -->
+  <section class="journey">
+    <div class="journey-inner">
+      <div class="reveal">
+        <p class="chapter">Chapter VI · Where I see us</p>
+
+        <h2>
+          I don't dream of
+          <span style="font-style:italic;">distance.</span>
+          <br />
+          I dream of ordinary days
+          <span style="font-style:italic;">with you.</span>
+        </h2>
+
+        <p class="copy">
+          A calm life, together. Healthy bodies. Better habits.
+          Romance that doesn't have to fit inside a goodbye.
+          A life where "I miss you" slowly becomes...
+          "What should we cook tonight?"
+        </p>
+      </div>
+
+      <div class="route">
+        <div class="place reveal"><span class="dot"></span>Mumbai</div>
+        <div class="route-line"></div>
+        <div class="place reveal"><span class="dot"></span>Bengaluru</div>
+        <div class="route-line"></div>
+        <div class="place reveal"><span class="dot"></span>Germany</div>
+        <div class="route-line"></div>
+        <div class="place reveal" style="font-style:italic;"><span class="dot"></span>Together.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOME -->
+  <section class="home">
+    <div class="home-inner reveal">
+      <p class="chapter">The part I want most</p>
+
+      <h2>Together.</h2>
+
+      <p>
+        Not a forever house. Not even one city.
+        Just years, side by side.
+      </p>
+
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,7vw,4rem);line-height:1.1;margin-top:42px;">
+        Just the day when we wake up
+        <br />
+        <em>and you're there.</em>
+      </p>
+
+      <p>
+        No more countdowns. No more goodbyes at airports.
+      </p>
+
+      <p>
+        Just us...
+        finally getting to live the little life
+        we spent so many years imagining.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- BIRTHDAY -->
+  <section class="birthday">
+    <div class="particles" id="particles"></div>
+
+    <div class="birthday-content reveal">
+      <p class="chapter">And today...</p>
+
+      <div class="age">25</div>
+
+      <h2>
+        Happy Birthday,
+        <span style="display:block;color:var(--rose-soft);font-style:italic;">
+          Tejal.
+        </span>
+      </h2>
+
+      <div class="final-letter">
+        <p>
+          Thank you for being loyal to me,
+          and for caring about my health, my future and my life
+          even when I wasn't always good at caring about them myself.
+        </p>
+
+        <span class="special">
+          Thank you for still believing
+          there is something worth fighting for in us.
+        </span>
+
+        <p>
+          After everything we have been through, I want you to know this with
+          absolute certainty:
+        </p>
+
+        <span class="special">
+          I still choose you.
+          <br />
+          And I want to keep choosing you.
+        </span>
+
+        <p>
+          I want the trips. The lazy mornings.
+          The arguments we solve. The laughs nobody else understands.
+          The ordinary evenings.
+        </p>
+
+        <p>
+          I don't just want your beautiful moments, Sweetie.
+          <br />
+          <strong style="color:var(--text);font-weight:500;">
+            I want the whole life.
+          </strong>
+        </p>
+
+        <button class="final-button" id="finalButton">
+          One last thing... ❤️
+        </button>
+
+        <div class="secret" id="secret">
+          <p>
+            One day, Babe...
+            <br /><br />
+            we won't have to imagine
+            living together anymore.
+            <br /><br />
+            We'll simply wake up...
+            <br />
+            <span style="color:var(--rose-soft);">side by side.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Generate subtle stars
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 95; i++) {
+      const star = document.createElement("span");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.setProperty("--duration", (2 + Math.random() * 4) + "s");
+      star.style.animationDelay = (-Math.random() * 5) + "s";
+      stars.appendChild(star);
+    }
+
+    // Scroll progress
+    const progress = document.getElementById("progress");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (scrollTop / height) * 100 + "%";
+    }, { passive: true });
+
+
+    // Reveal sections as she scrolls
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal, .place").forEach(el => {
+      observer.observe(el);
+    });
+
+
+    // Final emotional reveal
+    const finalButton = document.getElementById("finalButton");
+    const secret = document.getElementById("secret");
+
+    finalButton.addEventListener("click", () => {
+      secret.classList.add("open");
+      finalButton.style.display = "none";
+
+      // Magical subtle burst
+      const container = document.getElementById("particles");
+
+      for (let i = 0; i < 70; i++) {
+        const p = document.createElement("span");
+        p.className = "particle";
+
+        const x = 45 + Math.random() * 10;
+        const y = 55 + Math.random() * 10;
+
+        p.style.left = x + "%";
+        p.style.top = y + "%";
+
+        container.appendChild(p);
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 350;
+
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+
+        const animation = p.animate([
+          {
+            opacity: 0,
+            transform: "translate(0,0) scale(.5)"
+          },
+          {
+            opacity: .95,
+            offset: .15
+          },
+          {
+            opacity: 0,
+            transform: `translate(${dx}px, ${dy}px) scale(1.3)`
+          }
+        ], {
+          duration: 1800 + Math.random() * 1200,
+          easing: "cubic-bezier(.17,.67,.42,1)"
+        });
+
+        animation.onfinish = () => p.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>
