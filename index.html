@@ -30,6 +30,7 @@
     html {
       scroll-behavior: smooth;
       background: var(--bg);
+      scroll-snap-type: y mandatory;
     }
 
     body {
@@ -95,6 +96,8 @@
       text-align: center;
       padding: 28px 22px;
       overflow: hidden;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .hero-glow {
@@ -195,6 +198,8 @@
       display: flex;
       align-items: center;
       padding: 50px 0;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .moment-inner {
@@ -272,6 +277,8 @@
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .distance-inner {
@@ -337,6 +344,8 @@
       align-items: center;
       background:
         radial-gradient(circle at 50% 50%, rgba(185,112,125,.12), transparent 42%);
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .love-inner {
@@ -367,6 +376,8 @@
       padding: 18vh 24px;
       display: flex;
       align-items: center;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .apology-inner {
@@ -405,6 +416,8 @@
       background:
         radial-gradient(circle at 50% 80%, rgba(232,179,115,.14), transparent 38%),
         linear-gradient(to bottom, var(--bg), #17131a 75%, #271d1b);
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .turning h2 {
@@ -422,6 +435,8 @@
       background:
         linear-gradient(to bottom, #271d1b, #8a6654 75%, #d6a986);
       color: #261c1a;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .journey-inner {
@@ -430,15 +445,16 @@
     }
 
     .journey .chapter {
-      color: rgba(38,28,26,.65);
+      color: rgba(255,230,196,.85);
     }
 
     .journey h2 {
-      color: #241b19;
+      color: #fff6ec;
+      text-shadow: 0 2px 24px rgba(30,18,12,.35);
     }
 
     .journey .copy {
-      color: rgba(38,28,26,.72);
+      color: rgba(255,244,232,.88);
     }
 
     .route {
@@ -491,6 +507,8 @@
         linear-gradient(to bottom, #d6a986, #f0c7a9 55%, #e8b9a6);
       color: #312321;
       overflow: hidden;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .home-inner {
@@ -521,6 +539,8 @@
       background:
         radial-gradient(circle at 50% 42%, rgba(221,142,153,.20), transparent 30%),
         #17111a;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     .birthday-content {
@@ -624,6 +644,16 @@
       .distance { padding-left: 60px; padding-right: 60px; }
     }
 
+    @media (max-width: 699px) {
+      .story { padding-top: 6vh; padding-bottom: 10vh; }
+      .moment {
+        min-height: 100svh;
+        align-items: flex-start;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: .01ms !important;
@@ -680,12 +710,12 @@
         <div class="big-date">13 April 2019</div>
 
         <h2>
-          Somewhere between school days and growing up...
+          Somewhere between college days and growing up...
           <em style="color:var(--rose-soft)">you became my person.</em>
         </h2>
 
         <p class="copy">
-          I first knew you from our classes in 11th standard.
+          I first knew you from our UT in 10th standard.
           Back then, I had absolutely no idea that the girl I saw would become
           someone whose presence would quietly shape so much of my life.
         </p>
@@ -938,40 +968,27 @@
 
       <div class="final-letter">
         <p>
-          Thank you for being loyal to me,
-          and for caring about my health, my future and my life
-          even when I wasn't always good at caring about them myself.
+          You've lived
+          <strong style="color:var(--text);font-weight:500;">9,133</strong>
+          days.
         </p>
 
         <span class="special">
-          Thank you for still believing
-          there is something worth fighting for in us.
+          And I've loved you for
+          <br />
+          2,702 of them.
         </span>
 
         <p>
-          After everything we have been through, I want you to know this with
-          absolute certainty:
+          Every day since 13 April 2019 —
+          and every day still to come.
         </p>
 
         <span class="special">
           I still choose you.
           <br />
-          And I want to keep choosing you.
+          And I always will.
         </span>
-
-        <p>
-          I want the trips. The lazy mornings.
-          The arguments we solve. The laughs nobody else understands.
-          The ordinary evenings.
-        </p>
-
-        <p>
-          I don't just want your beautiful moments, Sweetie.
-          <br />
-          <strong style="color:var(--text);font-weight:500;">
-            I want the whole life.
-          </strong>
-        </p>
 
         <button class="final-button" id="finalButton">
           One last thing... ❤️
